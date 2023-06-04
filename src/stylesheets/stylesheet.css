@@ -22,24 +22,18 @@ body{
     padding: 5%;
     font-weight: 800;
     font-size: xx-large;
-    border-style: none;
-}
-
-.taskbar-header:hover{
     box-shadow: 8px 8px #d1cfe2;
     border-style: solid;
 }
 
 .taskbar-content{
     display: grid;
-    grid-template-rows: 10%;
+    grid-auto-rows: 10%;
     border-style: none;
     padding: 3%;
-}
-
-.taskbar-content:hover{
     box-shadow: 10px 10px #d4afb9;
     border-style: solid;
+
 }
 
 .taskbar-content > button{
@@ -52,13 +46,9 @@ body{
     min-width: 100%;
     font-weight: bolder;
     font-size: larger;
+    margin-top: 2%;
 }
 
-button:hover{
-    box-shadow: 5px 5px black;
-    border-style: solid;
-    cursor: pointer;
-}
 
 .dashboard{
     display: grid;
@@ -72,11 +62,63 @@ button:hover{
     border-style: none;
     font-size: large;
     padding: 3%;
-}
-
-.dashboard-title:hover{
     box-shadow: 8px 8px #7ec4cf;
     border-style: solid;
+}
+
+.dashboard-body{
+    box-shadow: 10px 10px #9cadce;
+    border-style: solid;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    justify-content: space-between;
+    min-height: 8%;
+}
+
+.task > *{
+    border-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task:hover{
+    box-shadow: 5px 5px black;
+    border-style: solid;
+}
+
+.task-text-sect{
+    min-width: 40%;
+    border-left-style:solid;
+    border-right-style: solid;
+}
+
+.due-date-sect{
+    min-width: 25%;
+    border-right-style: solid;
+}
+
+.edit-sect{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-sect > button{
+    background-color: white;
+    min-height: 20%;
+    min-width: 40%;
+    border-style: none;
+}
+
+.edit-sect > button > img{
+    max-width: 16px;
+    max-height: 16px;
 }
 
 div{
@@ -90,4 +132,15 @@ title{
     color: #9cadce;
     color: #7ec4cf;
     color: #daeaf6;
+}
+
+.taskbar-content > button:hover{
+    box-shadow: 5px 5px black;
+    border-style: solid;
+    cursor: pointer;
+}
+
+#add-project{
+    font-weight: lighter;
+    font-size: xx-large;
 }
