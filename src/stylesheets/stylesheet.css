@@ -1,0 +1,32 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    min-height: 100vh;
+}
+.taskbar{
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.taskbar-header{
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+
+div{
+    border-style: solid;
+    margin: 20px;
+}
+
+title{
+    color: #d4afb9;
+    color: #d1cfe2;
+    color: #9cadce;
+    color: #7ec4cf;
+    color: #daeaf6;
+}
