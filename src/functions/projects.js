@@ -4,6 +4,7 @@ class Project {
   constructor(name) {
     this.name = name;
     this.tasks = [];
+    this.loaded = false;
   }
 
   getName() {
@@ -16,6 +17,15 @@ class Project {
 
   addTask(task) {
     this.tasks.push(task);
+  }
+
+  setLoaded() {
+    this.loaded = !(this.loaded);
+    return this.loaded;
+  }
+
+  getLoaded() {
+    return this.loaded;
   }
 }
 
