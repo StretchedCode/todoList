@@ -126,6 +126,7 @@ body{
     font-weight: bolder;
     font-size: x-large;
     min-width: 100%;
+    border-style: none;
 }
 
 div{
