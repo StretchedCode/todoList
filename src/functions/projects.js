@@ -18,3 +18,5 @@ class project {
     this.tasks.push(task);
   }
 }
+
+export default project;
