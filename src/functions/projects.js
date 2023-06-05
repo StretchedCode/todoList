@@ -1,6 +1,6 @@
 // Module that creates project objects through classes and exports it to index.js
 
-class project {
+class Project {
   constructor(name) {
     this.name = name;
     this.tasks = [];
@@ -19,4 +19,4 @@ class project {
   }
 }
 
-export default project;
+export default Project;
