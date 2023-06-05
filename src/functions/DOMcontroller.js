@@ -54,8 +54,16 @@ class DOMcontroller {
     document.body.appendChild(this.body);
   }
 
-  createProjectDOM(project) {
+  getProjectBtn() {
+    return this.createProjectBtn;
+  }
 
+  createProjectDOM(projectName) {
+    const newProjDOM = document.createElement('button');
+    newProjDOM.textContent = projectName;
+    this.taskBarContent.appendChild(newProjDOM);
+
+    return newProjDOM;
   }
 
   createTodoDOM(todo) {
