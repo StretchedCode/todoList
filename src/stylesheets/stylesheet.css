@@ -121,6 +121,13 @@ body{
     max-height: 16px;
 }
 
+.add-task-button{
+    background-color: white;
+    font-weight: bolder;
+    font-size: x-large;
+    min-width: 100%;
+}
+
 div{
     border-style: solid;
     margin: 10px;
