@@ -58,16 +58,77 @@ class DOMcontroller {
     return this.createProjectBtn;
   }
 
-  createProjectDOM(projectName) {
-    const newProjDOM = document.createElement('button');
-    newProjDOM.textContent = projectName;
-    this.taskBarContent.appendChild(newProjDOM);
+  getTaskBtn() {
+    return this.createTaskBtn;
+  }
 
+  getfocusProject() {
+    return this.focusProject;
+  }
+
+  setfocusProject(project) {
+    this.focusProject = project;
+    console.log(this.focusProject);
+    this.displayProject(project);
+  }
+
+  createProjectDOM(project) {
+    const newProjDOM = document.createElement('button');
+    newProjDOM.textContent = project.getName();
+    this.taskBarContent.appendChild(newProjDOM);
+    project.setLoaded();
+    newProjDOM.addEventListener('click', () => { this.setfocusProject(project); });
     return newProjDOM;
   }
 
-  createTodoDOM(todo) {
+  createTodoDOM(task) {
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task');
 
+    const checkBoxSection = document.createElement('div');
+    checkBoxSection.classList.add('check-box-sect');
+
+    const checkBox = document.createElement('input');
+    checkBox.setAttribute('type', 'checkbox');
+
+    const textBoxSection = document.createElement('div');
+    textBoxSection.classList.add('task-text-sect');
+    textBoxSection.textContent = task.getTitle();
+
+    const dueDateSection = document.createElement('div');
+    dueDateSection.classList.add('due-date-sect');
+
+    const dueDate = document.createElement('input');
+    dueDate.setAttribute('type', 'date');
+
+    const editSection = document.createElement('div');
+    editSection.classList.add('edit-sect');
+    editSection.textContent = 'Edit Task';
+
+    checkBoxSection.appendChild(checkBox);
+    dueDateSection.appendChild(dueDate);
+
+    taskContainer.appendChild(checkBoxSection);
+    taskContainer.appendChild(textBoxSection);
+    taskContainer.appendChild(dueDateSection);
+    taskContainer.appendChild(editSection);
+
+    this.dashBoardBody.appendChild(taskContainer);
+  }
+
+  displayProject() {
+    // add css-styling to indicate that project has been selected
+    console.log('domController');
+    // functionality
+
+    this.dashBoardBody.innerHTML = '';
+    this.dashBoardBody.appendChild((this.createTaskBtnContainer));
+
+    const projTasks = this.focusProject.getTasks();
+
+    projTasks.forEach((task) => {
+      this.createTodoDOM(task);
+    });
   }
 }
 
