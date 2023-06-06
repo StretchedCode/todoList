@@ -121,6 +121,7 @@ class DOMcontroller {
     console.log('domController');
     // functionality
 
+    this.dashBoardTitle.textContent = this.focusProject.getName();
     this.dashBoardBody.innerHTML = '';
     this.dashBoardBody.appendChild((this.createTaskBtnContainer));
 
