@@ -1,5 +1,8 @@
 // The interface module handles all of the DOM manipulation within the application
 
+import icon from '../assets/close.png';
+import editIcon from '../assets/menu-button-of-three-horizontal-lines.png';
+
 class DOMcontroller {
   constructor() {
     this.body = document.createElement('div');
@@ -103,7 +106,15 @@ class DOMcontroller {
 
     const editSection = document.createElement('div');
     editSection.classList.add('edit-sect');
-    editSection.textContent = 'Edit Task';
+
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('edit-button');
+
+    const delBtn = document.createElement('button');
+    delBtn.classList.add('cancel-button');
+
+    editSection.appendChild(editBtn);
+    editSection.appendChild(delBtn);
 
     checkBoxSection.appendChild(checkBox);
     dueDateSection.appendChild(dueDate);
