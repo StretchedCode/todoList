@@ -21,7 +21,6 @@ class Project {
 
   setLoaded() {
     this.loaded = !(this.loaded);
-    return this.loaded;
   }
 
   getLoaded() {
