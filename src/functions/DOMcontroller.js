@@ -88,6 +88,9 @@ class DOMcontroller {
     const taskContainer = document.createElement('div');
     taskContainer.classList.add('task');
 
+    this.dashBoardBody.appendChild(taskContainer);
+    task.setContainer(taskContainer);
+
     const checkBoxSection = document.createElement('div');
     checkBoxSection.classList.add('check-box-sect');
 
@@ -118,6 +121,7 @@ class DOMcontroller {
 
     const delBtn = document.createElement('button');
     delBtn.classList.add('cancel-button');
+    task.setdelBtn(delBtn);
 
     editBtn.appendChild(editIcon);
     delBtn.appendChild(delIcon);
@@ -132,20 +136,17 @@ class DOMcontroller {
     taskContainer.appendChild(textBoxSection);
     taskContainer.appendChild(dueDateSection);
     taskContainer.appendChild(editSection);
-
-    this.dashBoardBody.appendChild(taskContainer);
   }
 
   displayProject() {
     // add css-styling to indicate that project has been selected
-    console.log('domController');
     // functionality
 
     this.dashBoardTitle.textContent = this.focusProject.getName();
     this.dashBoardBody.innerHTML = '';
     this.dashBoardBody.appendChild((this.createTaskBtnContainer));
 
-    const projTasks = this.focusProject.getTasks();
+    const projTasks = this.getfocusProject().getTasks();
 
     projTasks.forEach((task) => {
       this.createTodoDOM(task);
