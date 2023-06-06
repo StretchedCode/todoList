@@ -28,8 +28,6 @@ function loadProjects() {
   projects.forEach((project) => {
     if (project.getLoaded() === false) {
       UIController.createProjectDOM(project);
-    } else {
-      project.setLoaded();
     }
   });
 }
