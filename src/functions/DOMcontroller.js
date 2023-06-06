@@ -1,7 +1,7 @@
 // The interface module handles all of the DOM manipulation within the application
 
 import icon from '../assets/close.png';
-import editIcon from '../assets/menu-button-of-three-horizontal-lines.png';
+import editicon from '../assets/menu-button-of-three-horizontal-lines.png';
 
 class DOMcontroller {
   constructor() {
@@ -107,11 +107,20 @@ class DOMcontroller {
     const editSection = document.createElement('div');
     editSection.classList.add('edit-sect');
 
+    const editIcon = new Image();
+    const delIcon = new Image();
+
+    editIcon.src = editicon;
+    delIcon.src = icon;
+
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit-button');
 
     const delBtn = document.createElement('button');
     delBtn.classList.add('cancel-button');
+
+    editBtn.appendChild(editIcon);
+    delBtn.appendChild(delIcon);
 
     editSection.appendChild(editBtn);
     editSection.appendChild(delBtn);
